@@ -15323,7 +15323,7 @@ function handleMouseClick(e) {
         return;
     }
 
-    if (e.target.matches('data-enter')) {
+    if (e.target.matches('[data-enter]')) {
         submitGuess();
         return;
     }
