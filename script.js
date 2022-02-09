@@ -15303,7 +15303,7 @@ const guessGrid = document.querySelector('[data-guess-grid]');
 // const msOffset = Date.now() - offsetFromDate;
 // const dayOffset = msOffset / 1000 / 60 / 60 / 24;
 
-const targetWord = targetWords[parseInt(Math.random() * (365 - 1) + 1)];
+const targetWord = targetWords[parseInt(Math.random() * (2315 - 1) + 1)];
 
 startInteraction();
 
