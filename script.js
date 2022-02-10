@@ -22805,6 +22805,10 @@ let dictionary = dictionaryEN;
 
 const languageButton = document.querySelector('[data-language-selector]');
 
+if (!localStorage.getItem('language')) {
+    localStorage.setItem('language', 'english');
+}
+
 if (localStorage.getItem('language') === 'english') {
     languageButton.value = 'Click to change to Spanish';
     targetWords = targetWordsEN;
