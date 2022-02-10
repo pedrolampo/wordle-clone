@@ -15,7 +15,7 @@ body {
     font-size: clamp(0.5rem, 2.5vmin, 1.5rem);
 }
 
-header {
+.language-button-container {
     display: flex;
     justify-content: center;
 }

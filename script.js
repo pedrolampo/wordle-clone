@@ -22839,7 +22839,6 @@ languageButton.addEventListener('click', () => {
 // const offsetFromDate = new Date(2022, 0, 1);
 // const msOffset = Date.now() - offsetFromDate;
 // const dayOffset = msOffset / 1000 / 60 / 60 / 24;
-
 const targetWord = targetWords[parseInt(Math.random() * (2315 - 1) + 1)];
 
 startInteraction();
