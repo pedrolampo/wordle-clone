@@ -22829,8 +22829,6 @@ languageButton.addEventListener('click', () => {
     }
 });
 
-console.log(localStorage.getItem('language'));
-
 // IF YOU WANT TO HAVE 1 WORD PER DAY
 // UNCOMMENT THE CODE BELOW AND SET THE targetWords INDEX TO dayOffset
 
@@ -22839,8 +22837,6 @@ console.log(localStorage.getItem('language'));
 // const dayOffset = msOffset / 1000 / 60 / 60 / 24;
 
 const targetWord = targetWords[parseInt(Math.random() * (2315 - 1) + 1)];
-
-console.log(targetWord);
 
 startInteraction();
 
