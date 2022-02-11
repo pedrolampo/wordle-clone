@@ -22805,6 +22805,8 @@ let dictionary = dictionaryEN;
 
 const languageButton = document.querySelector('[data-language-selector]');
 
+// <button class="key" data-key="Ñ">Ñ</button>
+
 if (!localStorage.getItem('language')) {
     localStorage.setItem('language', 'english');
 }
@@ -22819,6 +22821,12 @@ if (localStorage.getItem('language') === 'spanish') {
     languageButton.value = 'Haga click para cambiar a Inglés';
     targetWords = targetWordsES;
     dictionary = dictionaryES;
+    keyboard.style.gridTemplateColumns = 'repeat(21, minmax(auto, 1.25em))';
+    keyboard.style.marginLeft = '1.5em';
+    const addKey = document.createElement('button');
+    addKey.textContent = 'Ñ';
+    addKey.classList.add('key');
+    keyboard.insertBefore(addKey, keyboard.children[20]);
 }
 
 languageButton.addEventListener('click', () => {
