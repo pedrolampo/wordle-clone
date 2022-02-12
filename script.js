@@ -22847,6 +22847,7 @@ const languageCheck = () => {
         const addKey = document.createElement('button');
         addKey.textContent = 'Ñ';
         addKey.classList.add('key');
+        addKey.dataset.key = 'Ñ';
         keyboard.insertBefore(addKey, keyboard.children[20]);
     }
 

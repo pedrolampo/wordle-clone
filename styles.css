@@ -266,11 +266,13 @@ body.light {
 .tile[data-state='wrong-location'] {
     border: none;
     background-color: hsl(49, 51%, 47%);
+    color: white;
 }
 
 .tile[data-state='correct'] {
     border: none;
     background-color: hsl(115, 29%, 43%);
+    color: white;
 }
 
 .alert-container {
