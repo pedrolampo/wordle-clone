@@ -22825,44 +22825,42 @@ themeSelector.addEventListener('change', () => {
     }
 });
 
-const languageCheck = () => {
-    const languageButton = document.querySelector('[data-language-selector]');
+const languageButton = document.querySelector('[data-language-selector]');
 
-    if (!localStorage.getItem('language')) {
-        localStorage.setItem('language', 'english');
-    }
+if (!localStorage.getItem('language')) {
+    localStorage.setItem('language', 'english');
+}
 
-    if (localStorage.getItem('language') === 'english') {
-        languageButton.value = 'Click to change to Spanish';
-        targetWords = targetWordsEN;
-        dictionary = dictionaryEN;
-    }
+if (localStorage.getItem('language') === 'english') {
+    languageButton.value = 'Click to change to Spanish';
+    targetWords = targetWordsEN;
+    dictionary = dictionaryEN;
+}
 
-    if (localStorage.getItem('language') === 'spanish') {
+if (localStorage.getItem('language') === 'spanish') {
+    languageButton.value = 'Haga click para cambiar a Inglés';
+    targetWords = targetWordsES;
+    dictionary = dictionaryES;
+    keyboard.style.gridTemplateColumns = 'repeat(21, minmax(auto, 1.25em))';
+    keyboard.style.marginLeft = '1.5em';
+    const addKey = document.createElement('button');
+    addKey.textContent = 'Ñ';
+    addKey.classList.add('key');
+    addKey.dataset.key = 'Ñ';
+    keyboard.insertBefore(addKey, keyboard.children[20]);
+}
+
+languageButton.addEventListener('click', () => {
+    if (languageButton.value === 'Click to change to Spanish') {
         languageButton.value = 'Haga click para cambiar a Inglés';
-        targetWords = targetWordsES;
-        dictionary = dictionaryES;
-        keyboard.style.gridTemplateColumns = 'repeat(21, minmax(auto, 1.25em))';
-        keyboard.style.marginLeft = '1.5em';
-        const addKey = document.createElement('button');
-        addKey.textContent = 'Ñ';
-        addKey.classList.add('key');
-        addKey.dataset.key = 'Ñ';
-        keyboard.insertBefore(addKey, keyboard.children[20]);
+        localStorage.setItem('language', 'spanish');
+        location.reload();
+    } else {
+        languageButton.value = 'Click to change to Spanish';
+        localStorage.setItem('language', 'english');
+        location.reload();
     }
-
-    languageButton.addEventListener('click', () => {
-        if (languageButton.value === 'Click to change to Spanish') {
-            languageButton.value = 'Haga click para cambiar a Inglés';
-            localStorage.setItem('language', 'spanish');
-            location.reload();
-        } else {
-            languageButton.value = 'Click to change to Spanish';
-            localStorage.setItem('language', 'english');
-            location.reload();
-        }
-    });
-};
+});
 
 // IF YOU WANT TO HAVE 1 WORD PER DAY
 // UNCOMMENT THE CODE BELOW AND SET THE targetWords INDEX TO dayOffset
@@ -22872,7 +22870,6 @@ const languageCheck = () => {
 // const dayOffset = msOffset / 1000 / 60 / 60 / 24;
 const targetWord = targetWords[parseInt(Math.random() * (2315 - 1) + 1)];
 
-languageCheck();
 startInteraction();
 
 function startInteraction() {
